@@ -14,6 +14,12 @@ body {
   min-height: 100vh;
 }
 
+#navbar-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* high value so it stays on top */
+}
 
 .contact-in {
   display: flex;
