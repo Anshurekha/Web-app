@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SWEEKAAR Matrimony</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #fff6f6;
+      color: #333;
+      overflow-x: hidden;
+    }
+  .sweekaar-navbar {
+    width: 100%;
+    background-color: #fff0f7; /* Soft pink background */
+    box-shadow: 0 4px 10px rgba(199, 21, 133, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    transition: padding 0.3s ease;
+    padding: 15px 0;
+  }
+
+  .sweekaar-navbar .container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .sweekaar-logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .sweekaar-logo img {
+    height: 70px;
+    width: auto;
+    display: block;
+  }
+
+  /* Responsive for tablets */
+  @media (max-width: 768px) {
+    .sweekaar-navbar .container {
+      justify-content: center;
+    }
+
+    .sweekaar-logo img {
+      height: 32px;
+    }
+  }
+
+  /* Responsive for mobile */
+  @media (max-width: 480px) {
+    .sweekaar-navbar .container {
+      justify-content: center;
+    }
+
+    .sweekaar-logo img {
+      height: 28px;
+    }
+  }
+
+
+
+    .matrimony-section {
+      padding: 60px 20px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .matrimony-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .matrimony-hero {
+      background: linear-gradient(to right, #f9c5d1, #9795ef);
+      color: white;
+      padding: 100px 20px;
+    }
+
+    .matrimony-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .matrimony-hero p {
+      font-size: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .matrimony-our-story {
+      background: #ffe4e1;
+    }
+
+    .matrimony-our-story h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #b03060;
+    }
+
+    /* Animation keyframes */
+    @keyframes fadeInScale {
+      0% {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fadeOutScale {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+    }
+
+  .matrimony-story-slide {
+    display: none;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.6;
+    opacity: 0;
+    transform: scale(0.95);
+    animation-fill-mode: forwards;
+  }
+
+  .matrimony-success-stories {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background: #fef9f4;
+    padding: 60px 40px;
+  }
+
+  /* Glowing gradient wave shape */
+  .matrimony-success-stories::before {
+    content: "";
+    position: absolute;
+    top: -150px;
+    left: -150px;
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(135deg, #c71585 0%, #f48fb1 100%);
+    border-radius: 50% 40% 60% 50% / 60% 70% 50% 60%;
+    filter: drop-shadow(0 0 30px #c71585aa);
+    animation: slowRotate 20s linear infinite;
+    opacity: 0.4;
+    z-index: 0;
+  }
+
+  /* Sharp polygon shape with glow */
+  .matrimony-success-stories::after {
+    content: "";
+    position: absolute;
+    bottom: -130px;
+    right: -120px;
+    width: 360px;
+    height: 360px;
+    background: linear-gradient(135deg, #b03060 0%, #8b004e 100%);
+    clip-path: polygon(
+      50% 0%, 90% 10%, 100% 50%, 80% 90%, 50% 100%, 20% 90%, 10% 50%, 20% 10%
+    );
+    filter: drop-shadow(0 0 20px #b03060cc);
+    animation: slowRotateReverse 25s linear infinite;
+    opacity: 0.35;
+    z-index: 0;
+  }
+
+  /* Subtle rotation animations */
+  @keyframes slowRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes slowRotateReverse {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+  }
+
+
+
+  /* Show slide with fade in + scale */
+  .matrimony-story-slide.anim-in {
+    display: block;
+    animation: fadeInScale 0.5s ease forwards;
+  }
+
+  /* Animate slide out */
+  .matrimony-story-slide.anim-out {
+    animation: fadeOutScale 0.5s ease forwards;
+  }
+
+  /* When active and visible */
+  .matrimony-story-slide.active {
+    display: block; /* fallback */
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .matrimony-story-nav {
+    margin-top: 30px;
+  }
+
+  .matrimony-join-button {
+    background: #c71585;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background 0.3s;
+  }
+
+  .matrimony-join-button:hover {
+    background: #a0136b;
+  }
+
+  .matrimony-success-stories {
+    background: #fef9f4;
+  }
+
+  .matrimony-success-stories h2,
+  .matrimony-join-us h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #b03060;
+  }
+
+  .matrimony-stories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .matrimony-story-card {
+    width: 280px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+
+
+  .matrimony-story-card p {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  /* Smaller devices (tablets, phones) */
+  @media (max-width: 768px) {
+    .matrimony-story-card p {
+      font-size: 14px;
+      margin-top: 8px;
+    }
+  }
+
+  /* Very small devices (phones) */
+  @media (max-width: 480px) {
+    .matrimony-story-card p {
+      font-size: 13px;
+      margin-top: 6px;
+    }
+  }
+  /* Updated photos animation for 3rd section */
+  .matrimony-photos-animation {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .matrimony-photos-animation img {
+    width: 180px;
+    height: 200px;
+    border-radius: 0;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(199, 21, 133, 0.3);
+    cursor: pointer;
+    animation: floatFade 6s ease-in-out infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .matrimony-photos-animation img:nth-child(2) {
+    animation-delay: 3s; /* stagger the animation for the second image */
+  }
+
+  .matrimony-photos-animation img:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 12px 30px rgba(199, 21, 133, 0.5);
+  }
+
+  /* Floating + fade animation */
+  @keyframes floatFade {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(-15px) scale(1.05);
+      opacity: 0.85;
+    }
+  }
+
+  /* Animation keyframes for story slides */
+  @keyframes fadeInScale {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fadeOutScale {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+  }
+
+      .matrimony-join-us {
+    background: #ffe0f0;
+    padding: 80px 40px;
+    text-align: center;
+    border-radius: 100px 0 100px 0;
+  }
+
+      .matrimony-join-us p {
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+
+      @media (max-width: 768px) {
+        .matrimony-stories {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+  .sweekaar-footer {
+    background-color: #1a1a3d; /* Deep navy */
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 4px solid #ff6f91; /* Soft pink accent */
+    color: #dcd6f7; /* Light lavender */
+    font-family: 'Playfair Display', serif;
+  }
+
+  .footer-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .footer-logo img {
+    height: 60px;
+    width: auto;
+    margin-bottom: 25px;
+  }
+
+  .footer-info p {
+    font-size: 16px;
+    margin: 8px 0;
+    color: #c0b9dd; /* Soft pastel purple */
+  }
+
+  .footer-info strong {
+    font-weight: 600;
+  }
+
+  /* Responsive */
+  @media (max-width: 480px) {
+    .footer-logo img {
+      height: 50px;
+    }
+
+    .footer-info p {
+      font-size: 14px;
+    }
+  }
+
+
+  </style>
+</head>
+<body>
+    <nav class="sweekaar-navbar">
+  <div class="container">
+    <a href="index.html" class="sweekaar-logo">
+      <img src="images/sweekaar-logo.jpg" alt="SWEEKAAR Logo" />
+    </a>
+  </div>
+</nav>
+
+
+  <section class="matrimony-hero matrimony-section">
+    <h1>Welcome to SWEEKAAR</h1>
+    <p>Where hearts meet and journeys begin. Find your perfect match in the most traditional yet modern way.</p>
+  </section>
+  <svg viewBox="0 0 1440 100" style="display: block; width: 100%; margin-top: -5px;" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <path fill="#ffe4e1" d="M0,50 C360,100 1080,0 1440,50 L1440,100 L0,100 Z"></path>
+    </svg>
+
+  <section class="matrimony-our-story matrimony-section">
+    <h2>Our Story</h2>
+    <div id="matrimony-story-slides">
+      <div class="matrimony-story-slide active">
+        <p>
+          SWEEKAAR was born out of the belief that true connections are made when hearts align. With a mix of tradition and technology, we’ve helped thousands find life partners who share their dreams, values, and cultures.
+        </p>
+      </div>
+      <div class="matrimony-story-slide">
+        <p>
+          Our journey began in 2020 with a small but passionate team. Inspired by the idea of modern matchmaking rooted in tradition, we built a platform that blends human connection with smart tech.
+        </p>
+      </div>
+      <div class="matrimony-story-slide">
+        <p>
+          Over the years, we've introduced features like compatibility scoring, family-friendly interfaces, and personalized guidance—ensuring a thoughtful experience for all age groups.
+        </p>
+      </div>
+      <div class="matrimony-story-slide">
+        <p>
+          We believe marriage is not just a union of two individuals but also the coming together of families and cultures. Our platform respects this tradition while embracing modern values and lifestyles.
+        </p>
+      </div>
+      <div class="matrimony-story-slide">
+        <p>
+          Today, SWEEKAAR is home to millions of success stories. We continue to grow with your trust and are committed to making your journey to love joyful, respectful, and fulfilling.
+        </p>
+      </div>
+    </div>
+    <div class="matrimony-story-nav">
+      <button class="matrimony-join-button" onclick="matrimonyPrevSlide()">Previous</button>
+      <button class="matrimony-join-button" onclick="matrimonyNextSlide()">Next</button>
+    </div>
+  </section>
+
+  <section class="matrimony-success-stories matrimony-section">
+  <h2>Success Stories</h2>
+
+  <!-- New photo animation container -->
+  <div class="matrimony-photos-animation">
+    
+    <img src="images/couple1.jpg" alt="Happy Couple 1" />
+    <img src="images/couple2.jpg" alt="Happy Couple 2" />
+  </div>
+
+  <div class="matrimony-stories">
+    <div class="matrimony-story-card">
+        <h5>Couple 1</h5>
+      <p>"We met on SWEEKAAR, and it was a perfect match! Thank you!"</p>
+    </div>
+    <div class="matrimony-story-card">
+        <h5>Couple 2</h5>
+      <p>"SWEEKAAR brought us together in the most magical way."</p>
+    </div>
+  </div>
+</section>
+
+  <section class="matrimony-join-us matrimony-section">
+    <h2>Start Your Journey Today</h2>
+    <p>Join SWEEKAAR and find the one who completes your story.</p>
+    <button class="matrimony-join-button" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfmj5C19IhGeKUYk_x7-y-qCQ9csyakT5AGGFtZQIFm6ihd6A/viewform?usp=header', '_blank')">Join Now</button>  </section>
+
+ <footer class="sweekaar-footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <img src="images/sweekaar-logo.jpg" alt="Sweekaar Logo" />
+    </div>
+    <div class="footer-info">
+      <p><strong>Email:</strong> sweekarmatrimonial@gmail.com</p>
+      <p><strong>Phone:</strong> +91-7606985077</p>
+      <p><strong>Location:</strong>  #41, Satya Nagar, Bhubaneswar, Odisha - 751007</p>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+  <script>
+    // Fade-in animation on scroll
+    const matrimonySections = document.querySelectorAll('.matrimony-section');
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+    matrimonySections.forEach(section => observer.observe(section));
+
+    // Story slider logic with fade in/out + scale animations
+    let matrimonyCurrentSlide = 0;
+    const matrimonySlides = document.querySelectorAll('.matrimony-story-slide');
+    let isAnimating = false;
+
+    function matrimonyShowSlide(newIndex) {
+      if (isAnimating || newIndex === matrimonyCurrentSlide) return;
+      isAnimating = true;
+
+      const currentSlide = matrimonySlides[matrimonyCurrentSlide];
+      const nextSlide = matrimonySlides[newIndex];
+
+      // Animate current slide out
+      currentSlide.classList.remove('anim-in');
+      currentSlide.classList.add('anim-out');
+
+      // When animation ends, hide current slide and show next
+      currentSlide.addEventListener('animationend', function handler() {
+        currentSlide.classList.remove('active', 'anim-out');
+        currentSlide.style.display = 'none';
+
+        // Show next slide with fade in + scale
+        nextSlide.style.display = 'block';
+        nextSlide.classList.add('anim-in', 'active');
+
+        nextSlide.addEventListener('animationend', function handlerIn() {
+          nextSlide.classList.remove('anim-in');
+          isAnimating = false;
+          nextSlide.removeEventListener('animationend', handlerIn);
+        });
+
+        currentSlide.removeEventListener('animationend', handler);
+      });
+      
+      matrimonyCurrentSlide = newIndex;
+    }
+
+    function matrimonyNextSlide() {
+      const nextIndex = (matrimonyCurrentSlide + 1) % matrimonySlides.length;
+      matrimonyShowSlide(nextIndex);
+    }
+
+    function matrimonyPrevSlide() {
+      const prevIndex = (matrimonyCurrentSlide - 1 + matrimonySlides.length) % matrimonySlides.length;
+      matrimonyShowSlide(prevIndex);
+    }
+
+    // Initialize slides display
+    matrimonySlides.forEach((slide, i) => {
+      if (i === matrimonyCurrentSlide) {
+        slide.style.display = 'block';
+        slide.classList.add('active');
+        slide.style.opacity = '1';
+        slide.style.transform = 'scale(1)';
+      } else {
+        slide.style.display = 'none';
+      }
+    });
+
+     
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Web Development Services</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #1d0123;
+      color: #333;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+  /*.hero-content {
+      background-image: url("images/website-hosting-concept-with-bright-light.jpg");
+      height: 60px;
+      padding: 5rem 2rem;
+    }*/
+  .hero-content {
+  background-image: url ("django (1).png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 50px; 
+  padding: 5rem 2rem;
+ }
+
+  .hero-content h1 {
+      color: #fff;
+      font-size: 2.8rem;
+      margin: 0;
+      animation: fadeOut 2s ease-out;
+      align-items: center;
+  }
+
+    .hero-content p {
+      color: #c9d1d9;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+    
+
+    /* Services */
+    .services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 60px 20px;
+    background-image: url('');
+  }
+
+  .service-card {
+    background: #9c97e2;
+    border-radius: 15px;
+    padding: 30px 20px;
+    width: 280px;
+    box-shadow: 0 8px 20px rgba(235, 232, 232, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+    animation-duration: 1.2s;
+  }
+
+  .service-card:hover {
+    transform: translateY(-10px);
+  }
+
+  .service-card h2 {
+    color: #0d1117;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+
+  .service-card p {
+    color: #111111;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+
+    /* CTA Button */
+    .cta {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .cta a {
+      display: inline-block;
+      background: #238636;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: background 0.3s ease;
+    }
+
+    .cta a:hover {
+      background: #2ea043;
+    }
+
+    
+    .framework-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-top: 0.5rem;
+    }
+
+    .framework-title span {
+      color: #1e90ff;
+    }
+
+    .grid-wrapper {
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+      gap: 30px;
+      max-width: 900px;
+      width: 100%;
+      justify-items: center;
+    }
+
+    .icon {
+      width: 75px;
+      height: 80px;
+      background-color: #333;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      color: white;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+   .icon:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 15px rgb(103, 2, 2);
+}
+    
+    @keyframes fadeOut{
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .service-card {
+        width: 90% !important;
+      }
+
+      .hero-content h1 {
+        font-size: 2rem !important;
+      }
+
+      .icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbar-container"></div>
+<div class="hero">
+  <div class="hero-content">
+    <h1>Web Development Services</h1>
+    <p>Modern, responsive, and high-performance websites tailored for success.</p>
+  </div>
+</div>
+<section class="about-section">
+  <div class="scrolling-background">
+    <div class="scrolling-images"></div>
+  </div>
+  <div class="about-content">
+    <h2>About Us</h2>
+    <p>
+      At our core, we are passionate creators of digital excellence. With a team of experienced developers, designers, and strategists, we turn concepts into powerful web solutions that drive growth and engagement.
+    </p>
+    <p>
+      Whether you’re a startup or an enterprise, we partner with you to deliver results that speak through design, code, and customer satisfaction.
+    </p>
+  </div>
+</section>
+ <!-- <style>
+  
+  
+ 
+</style> -->
+
+<div class="services">
+  <div class="service-card slideInLeft">
+     <h2>Frontend Development</h2>
+    <p>Transforming ideas into immersive digital experiences, frontend development is the art of bringing design to life. Using the power of HTML, CSS, JavaScript, and modern libraries like React, we craft interfaces that are not just beautiful—but also intuitive, responsive, and interactive.</p>
+    <p><strong>We don’t just build websites—we choreograph stories users can touch.</strong></p>
+</div>
+
+  <div class="service-card slideInUp">
+    <h2>Backend Development</h2>
+    <p>Powering the unseen engine behind every digital experience, backend development is where logic meets performance. With technologies like Node.js, Express, Python, and robust databases like MongoDB and PostgreSQL, we build secure, scalable, and efficient systems that keep applications running smoothly..</p>
+    <p><strong>We don’t just write server code—we architect reliable foundations for innovation.</strong></p>
+  </div>
+
+  <div class="service-card slideInRight">
+    <h2>Fullstack Development</h2>
+    <p>Bridging the gap between stunning interfaces and powerful functionality, fullstack development is the complete craft of building end-to-end digital solutions. From dynamic frontends with React and JavaScript to scalable backends with Node.js, Express, and databases like MongoDB or PostgreSQL—we handle it all..</p>
+    <p><strong>We don’t just develop apps—we deliver seamless, full-circle digital experiences.</strong></p>
+  </div>
+
+  <div class="service-card slideInLeft">
+   <h2>Fullstack E-commerce Development</h2>
+    <p>In the fast-paced world of online shopping, performance, security, and user experience are everything. Our fullstack e-commerce development brings together beautiful, responsive frontends with robust, scalable backends—crafted using technologies like React, Node.js, Express, and secure databases like MongoDB and PostgreSQL.</p>
+    <p><strong>We build e-commerce platforms that don’t just sell—they convert, retain, and grow.</strong></p>
+  </div>
+</div>
+
+
+  
+  <div class="framework-title" style="color: #a81010;">
+    Powering your favorite frameworks and tools
+  </div>
+  <div class="grid-wrapper" style="background-color: #212322;">
+    <div class="grid">
+      <div class="icon" style="background-color:#000804;"></div>
+      <div class="icon" style="background-color:#000a0b;">⚛️</div>
+      <div class="icon" style="background-color:#060102;"><img src="images/science (2).png (1).png" alt="" style="height: 50px;width: 50px;"></a></div>
+      <div class="icon" style="background-color:#090a09;"><img src="images\node-js.png" style="height: 50px;width: 50px;"></div>
+      <div class="icon" style="background-color:#090a09;"><img src="images\java-script.png" alt="" style="height: 50px; width: 50px;"></div>
+      <div class="icon" style="background-color:#090a09;"><img src="images\python.png" alt="" style="height: 50px; width: 50px;"></div>
+      <div class="icon" style="background-color:#090a09;"><img src="images\php.png" alt="" style="height: 50px;width: 50px;"></div>
+      <div class="icon" style="background-color:#090a09;"><img src="images\database.png" alt="" style="height: 50px;width: 50px;"></div>
+      <div class="icon" style="background-color:#090a09;"><img src="images\react.png" alt="" style="height: 50px;width: 50px;"></div>
+      <div class="icon" style="background-color:#090a09;"></div>
+      <div class="icon" style="background-color:#090a09;"></div>
+      <div class="icon" style="background-color:#090a09;"></div>
+      <div class="icon" style="background-color:#090a09;"><img src="images\ruby.png" alt="" style="height: 50px;width: 50px;"></div>
+      <div class="icon" style="background-color:#090a09;"><img src="images\react.png" alt="" style="height: 50px;width: 50px;"></div>
+      <div class="icon" style="background-color:#090a09;"><img src="images\react.png" alt="" style="height: 48px;width: 45px;"></div>
+      <div class="icon" style="background-color:#090a09;"><img src="images\react.png" alt="" style="height: 50px;width: 50px;"></div>
+      <div class="icon" style="background-color:#090a09;"><img src="images\react.png" alt="" style="height: 50px;width: 50px;"></div>
+      <div class="icon" style="background-color:#090a09;"><img src="images\react.png" alt="" style="height: 50px;width: 50px;"></div>
+      <div class="icon" style="background-color:#090a09;"></div>
+      <div class="icon" style="background-color:#090a09;"></div>
+</div>
+  
+  </div>
+  <div class="cta">
+    <a href="contact.html">Contact Us</a>
+  </div>
+  <style>
+  .testimonials {
+    background-color: #f4f6f8;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  .testimonials h2 {
+    font-size: 2.5rem;
+    color: #1e90ff;
+    margin-bottom: 2rem;
+  }
+
+  .testimonial-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .testimonial-card {
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(30, 144, 255, 0.15);
+    border-radius: 15px;
+    padding: 2rem;
+    max-width: 320px;
+    font-style: italic;
+    color: #444;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(30, 144, 255, 0.35);
+  }
+
+  .testimonial-card h4 {
+    margin-top: 1.5rem;
+    font-weight: 600;
+    color: #1e90ff;
+    font-style: normal;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .testimonial-cards {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .testimonial-card {
+      max-width: 90%;
+      margin: 0 auto;
+    }
+  }
+</style>
+
+<section class="testimonials">
+  <h2>What Our Clients Say</h2>
+  <div class="testimonial-cards">
+    <div class="testimonial-card">
+      <p>"The team delivered our project on time with exceptional quality. Their expertise in fullstack development transformed our vision into reality!"</p>
+      <h4>- Sarah Johnson</h4>
+    </div>
+
+    <div class="testimonial-card">
+      <p>"Amazing frontend work! The website is stunning and highly responsive. The user experience has improved drastically."</p>
+      <h4>- Michael Lee</h4>
+    </div>
+
+    <div class="testimonial-card">
+      <p>"Professional, efficient, and communicative. Backend services run smoothly with zero downtime. Highly recommend their services."</p>
+      <h4>- Priya Patel</h4>
+    </div>
+  </div>
+</section>
+<div id="footer-container"></div>
+  <script>
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-container').innerHTML = data;
+      });
+
+    // Load footer.html
+    fetch('Footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>

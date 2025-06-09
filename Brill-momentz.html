@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - BRILL MOMENTZ</title>
+  <style>
+    
+/* Reset */
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.6;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+.header{
+  background-color:rgb(199, 141, 243);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  animation: fadeInLogo 1s ease;
+}
+
+.logo-img {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
+.logo-container h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .logo-container h1 {
+    font-size: 1.4rem;
+  }
+
+  .logo-img {
+    height: 40px;
+  }
+}
+
+/* Animation */
+@keyframes fadeInLogo {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero Section */
+.hero-section {
+  background: 
+    linear-gradient(to bottom right, rgba(0, 0, 50, 0.5), rgba(0, 0, 100, 0.6)),
+    url("images/event.avif") no-repeat center center / cover;
+  color: #ffffff;
+  padding: 6rem 2rem 5rem;
+  text-align: center;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  animation: fadeInSlideUp 1s ease forwards;
+  position: relative;
+}
+
+.hero-section h2 {
+  font-size: 3.2rem;
+  margin-bottom: 1.2rem;
+  font-weight: 800;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+  letter-spacing: 1px;
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.8;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 4rem 1.5rem 3rem;
+    border-radius: 0 0 30px 30px;
+  }
+
+  .hero-section h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero-section p {
+    font-size: 1.05rem;
+  }
+}
+
+/* About us */
+.brill-momentz-about {
+  background: linear-gradient(270deg, #7b2ff7, #f107a3, #17eaff, #7b2ff7);
+  background-size: 800% 800%;
+  padding: 5rem 2rem;
+  margin: 2rem auto;
+  max-width: 1000px;
+  border-radius: 25px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+  animation: gradientShift 15s ease infinite, zoomInFade 1.2s ease-out forwards;
+  transform: scale(0.95);
+  opacity: 0;
+  transition: transform 0.3s ease;
+}
+
+.brill-momentz-about:hover {
+  transform: scale(1);
+}
+
+.brill-momentz-about h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow: 0 0 25px #f107a3, 0 0 15px #ffffff;
+  animation: fadeUp 1s ease-in-out forwards;
+}
+
+.brill-momentz-about p {
+  font-size: 1.25rem;
+  line-height: 2;
+  text-align: center;
+  margin: 1.2rem auto;
+  max-width: 850px;
+  animation: fadeUp 1.4s ease forwards;
+  opacity: 0;
+  color: white;
+  font-weight: bolder;
+}
+
+.brill-momentz-about p:nth-of-type(1) {
+  animation-delay: 0.6s;
+}
+.brill-momentz-about p:nth-of-type(2) {
+  animation-delay: 0.9s;
+}
+
+/* Animated gradient keyframes */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Other existing keyframes */
+@keyframes zoomInFade {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .brill-momentz-about {
+    padding: 3rem 1.5rem;
+  }
+
+  .brill-momentz-about h1 {
+    font-size: 2.2rem;
+  }
+
+  .brill-momentz-about p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brill-momentz-about h1 {
+    font-size: 1.8rem;
+  }
+
+  .brill-momentz-about p {
+    font-size: 1rem;
+  }
+}
+
+/* Our services */
+/* Our Services Section */
+.brill-momentz-services {
+  max-width: 1100px;
+  margin: 5rem auto;
+  padding: 2rem 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  text-align: center;
+}
+
+.brill-momentz-services h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  position: relative;
+  color: #3b0a45;
+}
+
+.brill-momentz-services h2::after {
+  content: '';
+  width: 80px;
+  height: 5px;
+  background: #6f42c1;
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 3px;
+}
+
+.brill-momentz-services p.intro {
+  max-width: 720px;
+  margin: 0 auto 3rem;
+  font-size: 1.15rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* Scrolling Wrapper */
+.services-scroll-wrapper {
+  overflow: hidden;
+}
+
+.services-scroll-inner {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 25s linear infinite;
+}
+
+/* Cards Layout */
+.services-grid {
+  display: flex;
+  gap: 0;
+  white-space: nowrap;
+}
+
+.service-card {
+  flex: 0 0 280px;
+  padding: 2rem 2rem 2.5rem;
+  background: linear-gradient(145deg, #ffffff, #f2e9ff);
+  border-radius: 20px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #47257c;
+  cursor: default;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 8px 20px rgba(111, 66, 193, 0.2);
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 25px 40px rgba(101, 50, 155, 0.3);
+}
+
+.service-card h3 {
+  font-size: 1.8rem;
+  color: #6f42c1;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.service-card ul {
+  list-style: none;
+  padding-left: 0;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+}
+
+.service-card ul li {
+  padding-left: 18px;
+  position: relative;
+  margin-bottom: 0.8rem;
+}
+
+.service-card ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #6f42c1;
+  font-weight: 700;
+  font-size: 1.3rem;
+  top: 0;
+}
+
+/* Scroll Animation */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .brill-momentz-services h2 {
+    font-size: 2.4rem;
+  }
+
+  .brill-momentz-services p.intro {
+    font-size: 1.05rem;
+    max-width: 90%;
+  }
+
+  .service-card {
+    flex: 0 0 220px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brill-momentz-services h2 {
+    font-size: 1.8rem;
+  }
+
+  .service-card {
+    flex: 0 0 180px;
+    font-size: 0.95rem;
+    padding: 1rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .service-card ul li {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+/* Event Gallery */
+.event-gallery {
+  padding: 4rem 1rem;
+  background-color: #f9f5f1;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.event-gallery h2 {
+  font-size: 2.5rem;
+  color: #3b0a45;
+  margin-bottom: 0.5rem;
+}
+
+.event-gallery .intro {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Carousel wrapper */
+.carousel-container {
+  perspective: 1500px;
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  height: 320px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Rotating 3D carousel */
+.carousel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: rotateCarousel 30s linear infinite;
+}
+
+.gallery-item {
+  position: absolute;
+  width: 240px;
+  height: 300px;
+  left: calc(50% - 120px);
+  top: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* 3D rotation positions */
+.gallery-item:nth-child(1) { transform: rotateY(0deg) translateZ(500px); }
+.gallery-item:nth-child(2) { transform: rotateY(45deg) translateZ(500px); }
+.gallery-item:nth-child(3) { transform: rotateY(90deg) translateZ(500px); }
+.gallery-item:nth-child(4) { transform: rotateY(135deg) translateZ(500px); }
+.gallery-item:nth-child(5) { transform: rotateY(180deg) translateZ(500px); }
+.gallery-item:nth-child(6) { transform: rotateY(225deg) translateZ(500px); }
+.gallery-item:nth-child(7) { transform: rotateY(270deg) translateZ(500px); }
+.gallery-item:nth-child(8) { transform: rotateY(315deg) translateZ(500px); }
+
+@keyframes rotateCarousel {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-item {
+    width: 180px;
+    height: 240px;
+    left: calc(50% - 90px);
+  }
+  .carousel-container {
+    height: 260px;
+  }
+}
+
+
+
+/* how it works */
+.brill-momentz-how-it-works {
+  display: flex;
+  height: 100vh;
+  width: 98vw;
+  background: linear-gradient(135deg, #3e2c72, #6b57a9);
+  overflow: hidden;
+  padding: 40px;
+  gap: 40px;
+}
+
+/* Left intro panel */
+.brill-momentz-how-it-works .intro {
+  flex: 1;
+  background: url("images/eve.gif") center center / cover no-repeat;
+  padding: 60px 50px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 0 20px #8c7be1aa;
+  text-align: left;
+  position: relative;
+}
+
+/* Optional light overlay for extra contrast */
+.brill-momentz-how-it-works .intro::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4); /* light wash for contrast */
+  border-radius: 30px;
+  z-index: 0;
+}
+
+.brill-momentz-how-it-works .intro * {
+  position: relative;
+  z-index: 1;
+}
+
+.brill-momentz-how-it-works .intro h2 {
+  font-size: 4.8rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  color: #2e1756; /* Deep purple */
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.15em;
+}
+
+.brill-momentz-how-it-works .intro p:first-of-type {
+  font-weight: bolder;
+  font-size: 1.6rem;
+  color: #3d2665; /* Rich eggplant */
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-style: italic;
+}
+
+.brill-momentz-how-it-works .intro p:nth-of-type(2) {
+  font-size: 1.65rem;
+  color: #3b3751; /* Muted dark gray-purple */
+  max-width: 450px;
+  line-height: 1.5;
+  font-weight: bolder;
+}
+
+/* Right steps panel */
+.brill-momentz-how-it-works .steps {
+  flex: 1.2;
+  background: rgba(54, 39, 114, 0.9);
+  border-radius: 30px;
+  padding: 50px 60px;
+  overflow-y: auto;
+  box-shadow: 0 0 25px #8c7be1bb inset;
+  scrollbar-width: thin;
+  scrollbar-color: #c6b8ff55 transparent;
+}
+
+/* Webkit scrollbar */
+.brill-momentz-how-it-works .steps::-webkit-scrollbar {
+  width: 12px;
+}
+
+.brill-momentz-how-it-works .steps::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.brill-momentz-how-it-works .steps::-webkit-scrollbar-thumb {
+  background: #b59fff88;
+  border-radius: 10px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+/* Steps list reset */
+.brill-momentz-how-it-works ol {
+  list-style: none;
+  counter-reset: step-counter;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* Each step card */
+.brill-momentz-how-it-works ol li {
+  position: relative;
+  background: rgba(78, 58, 146, 0.85);
+  border: 2px solid #b59fff88;
+  border-radius: 20px;
+  margin-bottom: 40px;
+  padding: 35px 40px 35px 100px;
+  box-shadow: 0 4px 15px rgba(182, 163, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.brill-momentz-how-it-works ol li:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(182, 163, 255, 0.7);
+}
+
+/* Step number circle */
+.brill-momentz-how-it-works ol li::before {
+  content: counter(step-counter);
+  counter-increment: step-counter;
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  background: #c6b8ff;
+  border-radius: 50%;
+  color: #3a0f90;
+  font-weight: 900;
+  font-size: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 12px #b59fffdd;
+  user-select: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.brill-momentz-how-it-works ol li:hover::before {
+  background: white;
+  color: #28115c;
+  box-shadow: 0 0 20px white;
+}
+
+/* Step title */
+.brill-momentz-how-it-works ol li strong {
+  display: block;
+  font-size: 1.9rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+  color: white;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 6px #a497f9cc;
+}
+
+/* Step description */
+.brill-momentz-how-it-works ol li p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: white;
+  margin-bottom: 8px;
+}
+
+/* Step emphasized text */
+.brill-momentz-how-it-works ol li em {
+  display: block;
+  font-style: normal;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.04em;
+  font-size: 1.05rem;
+  margin-top: 6px;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+  .brill-momentz-how-it-works {
+    flex-direction: column;
+    height: auto;
+    padding: 30px 20px;
+  }
+  .brill-momentz-how-it-works .intro,
+  .brill-momentz-how-it-works .steps {
+    width: 100%;
+    padding: 30px 25px;
+    border-radius: 20px;
+  }
+  .brill-momentz-how-it-works .intro h2 {
+    font-size: 3rem;
+    text-align: center;
+  }
+  .brill-momentz-how-it-works .intro p {
+    text-align: center;
+  }
+  .brill-momentz-how-it-works ol li {
+    padding: 30px 25px 30px 85px;
+    margin-bottom: 25px;
+  }
+  .brill-momentz-how-it-works ol li::before {
+    width: 50px;
+    height: 50px;
+    font-size: 1.8rem;
+    left: 20px;
+  }
+  .brill-momentz-how-it-works ol li strong {
+    font-size: 1.5rem;
+  }
+  .brill-momentz-how-it-works ol li p,
+  .brill-momentz-how-it-works ol li em {
+    font-size: 1rem;
+  }
+}
+
+/* comments */
+.brill-momentz-comment {
+  background: linear-gradient(135deg, #6a0dad, #b966ff); /* Deep violet to electric purple */
+  padding: 100px 50px;
+  text-align: center;
+  color: #ffffff;
+  clip-path: polygon(0 0, 100% 7%, 100% 100%, 0 93%);
+  box-shadow: 0 10px 40px rgba(106, 13, 173, 0.4);
+  margin: 20px auto;
+  max-width: 1200px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.brill-momentz-comment.email{
+  color: #28115c;
+}
+
+.brill-momentz-comment::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 140%;
+  height: 150%;
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(10deg);
+  z-index: 0;
+}
+
+.brill-momentz-comment h2 {
+  position: relative;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  z-index: 1;
+}
+
+.brill-momentz-comment p {
+  position: relative;
+  font-size: 1.3rem;
+  font-weight: 500;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #14022edd;
+  z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .brill-momentz-comment {
+    padding: 70px 25px;
+    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+  }
+
+  .brill-momentz-comment h2 {
+    font-size: 2.2rem;
+  }
+
+  .brill-momentz-comment p {
+    font-size: 1.1rem;
+  }
+}
+/* Footer */
+
+.brill-footer {
+  background: linear-gradient(135deg, #3d1e6d, #5f2c82);
+  color: #fff;
+  padding: 50px 20px 30px;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+  min-height: 250px;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap; /* Prevent wrapping to keep horizontal */
+  max-width: 900px;
+  margin: auto;
+  align-items: flex-start;
+  overflow-x: auto; /* Allow horizontal scroll on small screens */
+  padding: 0 10px;  /* Horizontal padding */
+  box-sizing: border-box;
+}
+
+.footer-logo img {
+  width: 160px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  margin-bottom: 20px;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.footer-links {
+  display: flex;
+  gap: 60px;
+  flex-wrap: nowrap; /* Keep links in a single row */
+  overflow-x: auto;  /* Allow horizontal scroll if needed */
+  flex-shrink: 0;    /* Prevent shrinking */
+}
+
+.footer-links div h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #f0eaff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap; /* Prevent heading wrap */
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  color: #e0d3ff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+  white-space: nowrap; /* Prevent link wrap */
+}
+
+.footer-links ul li a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 5px #d9b3ff;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #e2d8ffcc;
+  border-top: 1px solid #ffffff22;
+  padding-top: 20px;
+}
+
+/* Responsive adjustment: On phone screens move logo above links */
+@media (max-width: 480px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-logo {
+    margin-bottom: 25px; /* space below logo */
+  }
+
+  .footer-links {
+    flex-wrap: nowrap; /* keep links horizontal */
+    overflow-x: auto;
+    width: 100%; /* full width */
+    justify-content: center;
+    gap: 30px; /* smaller gap on small screens */
+  }
+}
+
+/* Optional: scrollbar styling */
+.footer-container::-webkit-scrollbar,
+.footer-links::-webkit-scrollbar {
+  height: 6px;
+}
+
+.footer-container::-webkit-scrollbar-thumb,
+.footer-links::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.footer-container::-webkit-scrollbar-track,
+.footer-links::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Global box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+#clients {
+  padding: 30px 20px;
+  background-color: #fdfdfd;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+#clients h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.brill-horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.brill-review {
+  flex: 0 0 auto;
+  width: 300px;
+  background: linear-gradient(145deg, #ffffff, #f2f2f2);
+  border-radius: 16px;
+  padding: 24px 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+  scroll-snap-align: start;
+  transition: all 0.3s ease;
+  border-top: 5px solid #f86f03; /* Accent color */
+}
+
+.brill-review:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.brill-review strong {
+  font-size: 1.1rem;
+  color: #2c2c2c;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.brill-meta {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.brill-stars {
+  font-size: 1.2rem;
+  color: #ffc107;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.brill-review-text {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+@media (max-width: 400px) {
+  .brill-review {
+    width: 260px;
+    padding: 20px 16px;
+  }
+}
+
+
+
+
+  </style>
+</head>
+<body>
+  <header class="header">
+  <div class="logo-container">
+    <img src="images/brill.jpg" alt="Brill Momentz Logo" class="logo-img" />
+        <a href="index.html">
+    <h1>BRILL MOMENTZ</h1>
+  </div>
+</header>
+
+
+  <section class="hero-section">
+    <h2>Discover BRILL MOMENTZ</h2>
+    <p>Innovative celebrations tailored to your moments — with heart, tech, and unforgettable charm.</p>
+  </section>
+
+  <section class="brill-momentz-about">
+  <h1>About Us</h1>
+  <p>At BRILL MOMENTZ, we believe every event is a story waiting to be told — and we’re here to bring that story to life with creativity, precision, and passion. In 2022, a change happend 3Q CONSULTANCY SERVICES converted to BRILL MOMENTZ.</p>
+  <p>We specialize in crafting memorable experiences that leave lasting impressions, whether it's a high-energy product launch, a corporate conference, a cultural celebration, or an intimate gathering. From concept to execution, our team handles every detail, allowing you to focus on what matters most — your audience.</p>
+</section>
+
+<section class="brill-momentz-services">
+  <h2>Our Services</h2>
+  <p class="intro">At Brill Momentz, we offer a full suite of event management services designed to turn ideas into unforgettable experiences. Whether you're planning a high-impact corporate gathering or a vibrant social event, we've got you covered — from concept to curtain call.</p>
+    <div class="services-scroll-wrapper">
+    <div class="services-scroll-inner">
+    <div class="services-grid">
+    <div class="service-card">
+      <h3>🌟 1. Corporate Events</h3>
+      <ul>
+        <li>Product Launches</li>
+        <li>Conferences & Seminars</li>
+        <li>Annual Days & Award Functions</li>
+        <li>Team Building Activities</li>
+        <li>Client Engagement Programs</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <h3>🎨 2. Brand Activations</h3>
+      <ul>
+        <li>Mall & Road Shows</li>
+        <li>Trade Shows & Exhibitions</li>
+        <li>Sampling & Promotion Campaigns</li>
+        <li>Experiential Marketing Events</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <h3>💍 3. Social & Private Events</h3>
+      <ul>
+        <li>Wedding Planning & Coordination</li>
+        <li>Birthday & Anniversary Parties</li>
+        <li>Cultural & Festival Events</li>
+        <li>Community Gatherings</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <h3>🌐 4. Virtual & Hybrid Events</h3>
+      <ul>
+        <li>Online Product Launches</li>
+        <li>Webinars & Live Streaming</li>
+        <li>Virtual Conferences & Fairs</li>
+        <li>Hybrid Event Production</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <h3>🛠️ 5. Event Production & Support</h3>
+      <ul>
+        <li>Venue Sourcing & Setup</li>
+        <li>Stage, Sound & Lighting Design</li>
+        <li>Creative Theme Development</li>
+        <li>Artist & Celebrity Management</li>
+        <li>On-ground Staffing & Coordination</li>
+      </ul>
+    </div>
+    </div>
+    </div>
+</div>
+
+</section>
+  
+
+<!-- Even gallery -->
+<section class="event-gallery">
+  <h2>📸 Event Highlights</h2>
+  <p class="intro">Take a look at some unforgettable moments we've created for our clients.</p>
+
+  <div class="carousel-container">
+    <div class="carousel" id="carousel">
+      <div class="gallery-item"><img src="images/ev1.jpg" alt="Event 1"></div>
+      <div class="gallery-item"><img src="images/ev2.jpg" alt="Event 2"></div>
+      <div class="gallery-item"><img src="images/ev3.jpg" alt="Event 3"></div>
+      <div class="gallery-item"><img src="images/ev4.jpg" alt="Event 4"></div>
+      <div class="gallery-item"><img src="images/ev5.jpg" alt="Event 5"></div>
+      <div class="gallery-item"><img src="images/ev6.jpg" alt="Event 6"></div>
+      <div class="gallery-item"><img src="images/ev7.jpg" alt="Event 7"></div>
+      <div class="gallery-item"><img src="images/ev8.jpg" alt="Event 8"></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="brill-momentz-how-it-works">
+  <div class="intro">
+    <h2>How It Works</h2>
+    <p><strong>Seamless. Creative. Reliable.</strong></p>
+    <p>We simplify the event planning process so you can focus on enjoying the experience. Here’s how we bring your vision to life:</p>
+  </div>
+
+  <div class="steps">
+    <ol>
+      <li>
+        <strong>Discovery & Consultation</strong>
+        <p>We start with a friendly chat to understand your goals, theme, audience, and budget.</p>
+        <em>→ Your ideas + our expertise = the perfect event blueprint.</em>
+      </li>
+      <li>
+        <strong>Planning & Concept Design</strong>
+        <p>Our team crafts a unique event concept with detailed planning, schedules, and cost estimates.</p>
+        <em>→ Creative themes, smart logistics, and full transparency.</em>
+      </li>
+      <li>
+        <strong>Coordination & Setup</strong>
+        <p>From venue booking to vendor management, we handle every detail behind the scenes.</p>
+        <em>→ Stage, sound, lighting, decor, branding — all taken care of.</em>
+      </li>
+      <li>
+        <strong>Event Execution</strong>
+        <p>Our team is on-site to manage the flow, troubleshoot issues, and ensure your event runs flawlessly.</p>
+        <em>→ Smooth delivery, happy guests, zero stress for you.</em>
+      </li>
+      <li>
+        <strong>Wrap-Up & Feedback</strong>
+        <p>We provide a post-event summary, collect feedback, and share media (photos/videos) if needed.</p>
+        <em>→ We grow with every event — thanks to your input.</em>
+      </li>
+    </ol>
+  </div>
+</section>
+<section id="clients">
+  <h2>Client Testimonials</h2>
+
+  <div class="brill-horizontal-scroll">
+    <div class="brill-review">
+      <strong>Prasant Panigrahi</strong>
+      <span class="brill-meta">15 reviews · 2 photos</span>
+      <div class="brill-stars">★★★★★</div>
+      <p class="brill-review-text">
+        I have an amazing experience with the entire team, they work personally with your ideas and demands and ensure that things are in place without any last moment surprises.
+      </p>
+    </div>
+
+    <div class="brill-review">
+      <strong>TANUS ENTERTAINMENT</strong>
+      <span class="brill-meta">10 reviews · 4 photos</span>
+      <div class="brill-stars">★★★★★</div>
+      <p class="brill-review-text">
+        It's very nice place and osm consulting services.....I like this place very much.....
+      </p>
+    </div>
+
+    <div class="brill-review">
+      <strong>smita mohanty</strong>
+      <span class="brill-meta">8 reviews · 1 photo</span>
+      <div class="brill-stars">★★★★★</div>
+      <p class="brill-review-text">
+        Brill Momentz consulting services is a perfect professional business hub with a positive intension to serve people in better way to achieve goal. I look forward the progress of the organisation in near future.
+      </p>
+    </div>
+
+    <div class="brill-review">
+      <strong>Sudip Behera</strong>
+      <span class="brill-meta">12 reviews · 3 photos</span>
+      <div class="brill-stars">★★★★★</div>
+      <p class="brill-review-text">
+        Very friendly nd cooperative staffs nd also good behaviour of all staffs , any one will satisfy by their activities ....👍👍
+      </p>
+    </div>
+
+    <div class="brill-review">
+      <strong>Sanjay Mohanty.</strong>
+      <span class="brill-meta">6 reviews</span>
+      <div class="brill-stars">★★★★☆</div>
+      <p class="brill-review-text">
+        Really good service and commitment which their crew has really make it possibly with smile and in time without delayed.
+      </p>
+    </div>
+
+    <div class="brill-review">
+      <strong>BEESHWAMOHAN MEESHRA</strong>
+      <span class="brill-meta">9 reviews · 2 photos</span>
+      <div class="brill-stars">★★★★★</div>
+      <p class="brill-review-text">
+        Brill Momentz consulting services do a fabulous job all the time when you need them, their team is so creative and always go the extra mile to help their client from beginning to end
+      I had wonderful experience with them on events like birthday parties and marriage functions.They also helped me in conducting virtual/online event sessions during these COVID times
+      </p>
+    </div>
+
+    <div class="brill-review">
+      <strong>Bhairabi Prasad Sahu</strong>
+      <span class="brill-meta">5 reviews</span>
+      <div class="brill-stars">★★★★★</div>
+      <p class="brill-review-text">
+        You guys just made my birthday event memorable. Thank you again guys for making my guests happy with your treat. Keep it up guys. Nice decoration with lovely flowers & it was verry much worthful as per the budget . Thanks.👍👍👍👍
+      </p>
+    </div>
+
+    <div class="brill-review">
+      <strong>Madan Mohan Das</strong>
+      <span class="brill-meta">11 reviews · 5 photos</span>
+      <div class="brill-stars">★★★★★</div>
+      <p class="brill-review-text">
+        Their team is very honest, upfront and genuinely cares about the success of the clients.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- comments -->
+<section class="brill-momentz-comment">
+  <h2>Ready to Plan Something Amazing?</h2>
+  <p>Let’s talk and make your next event unforgettable.</p>
+  <p class="email">Email- brillmomentzevents@gmail.com</p>
+</section>
+  
+<footer class="brill-footer">
+  <div class="footer-container">
+    <!-- Logo Section -->
+    <div class="footer-logo">
+      <img src="images/brill.jpg" alt="Brill Momentz Logo">
+    </div>
+
+    <!-- Links/Headings Section -->
+    <div class="footer-links">
+      <div>
+        <h4>About</h4>
+        <ul>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Our Services</a></li>
+          <li><a href="#">Event Highlights</a></li>
+          <li><a href="#">How it works</a></li>
+          <li><a href="#">Testimonials </a></li>
+          <li><a href="#">Connect with us</a></li>
+
+
+
+
+          
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Weddings</a></li>
+          <li><a href="#">Corporate Events</a></li>
+          <li><a href="#">Parties</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Brill Momentz. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

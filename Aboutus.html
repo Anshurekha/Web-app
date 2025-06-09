@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us - Sourcbox Solution</title>
+  <style>
+    /* Color Palette */
+   :root {
+      --primary-color: #4f46e5;
+      --primary-light: #a5b4fc;
+      --accent-color: #f43f5e;
+      --background-light: #f9fafb;
+      --text-dark: #1e293b;
+      --text-light: #64748b;
+      --white: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: rgb(6, 6, 43);
+      color: #ddd;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.5;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Container for central alignment */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem;
+      
+    }
+
+
+    /* header */
+    .hero {
+    background-image:url("image/back.mp4"),
+    linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background-size: cover, cover;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center center, center center;
+    color: var(--white);
+    text-align: center;
+    padding: 10rem 2rem;
+    border-radius: 0 0 50px 50px;
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.5);
+    position: relative;
+    overflow: hidden; /* hide overflow so video doesn't spill */
+    z-index: -1;
+
+  }
+
+
+  .hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none; /* so video doesn’t block clicks */
+  }
+
+  /* Make sure your text content stays above the video */
+  .hero h1,
+  .hero p {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: white;
+
+
+    /* Animation */
+    opacity: 0;
+    animation: slideUpFadeIn 1s ease forwards;
+    animation-delay: 0.3s;
+  }
+
+  .hero p {
+    font-size: 2.25rem;
+    font-weight: 900;
+    max-width: 700px;
+    margin:0 auto;
+    color:white;
+    line-height: 1.5;
+
+
+    /* Animation */
+    opacity: 0;
+    animation: fadeScaleIn 1s ease forwards;
+    animation-delay: 1.1s;
+  }
+
+  /* Keyframes for h1 slide up + fade */
+  @keyframes slideUpFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Keyframes for p fade + scale */
+  @keyframes fadeScaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+
+
+  section {
+    background: var(--white);
+    margin: 3rem 0;
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgb(0 0 0 / 0.1);
+  }
+
+  section h2 {
+    text-align: center;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    font-size: 2rem;
+  }
+
+  section p {
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+    color: var(--text-light);
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  /* vaules */
+   #values {
+      text-align: center;
+      background: transparent;
+      padding: 40px 20px;
+      position: relative;
+      font-family: Arial, sans-serif;
+    }
+
+    #values h2 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #4f46e5;
+      margin-bottom: 3rem;
+      letter-spacing: 1.5px;
+      text-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
+    }
+
+    .values-scroll-wrapper {
+      position: relative;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    .values-list {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 1rem;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; /* Firefox */
+    }
+
+    .values-list::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+    }
+
+    .value-item {
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.1), 0 0 8px rgba(79, 70, 229, 0.05);
+      border-radius: 20px;
+      padding: 2rem 1.5rem 3rem;
+      min-width: 22vw;
+      max-width: 320px;
+      min-height: 320px;
+      max-height: 320px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      transition: box-shadow 0.9s ease, transform 0.4s ease, background 0.4s ease;
+      cursor: default;
+    }
+
+    .value-item:hover {
+      box-shadow: 0 12px 28px rgba(79, 70, 229, 0.3), 0 0 16px rgba(139, 92, 246, 0.25);
+      background: #fafaff;
+      transform: translateY(-8px) scale(1.03);
+    }
+
+    .value-item img {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 1.2rem;
+      border-radius: 50%;
+      background: rgba(79, 70, 229, 0.1);
+      padding: 12px;
+      box-shadow: 0 2px 8px rgba(79, 70, 229, 0.15);
+      transition: background 0.3s ease;
+    }
+
+    .value-item:hover img {
+      background: rgba(79, 70, 229, 0.25);
+    }
+
+    .value-item h3 {
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #312e81;
+      text-align: center;
+      letter-spacing: 0.8px;
+    }
+
+    .value-item p {
+      font-size: 1.05rem;
+      color: #2c2c2c;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      line-height: 1.5;
+      font-weight: 600;
+    }
+
+    .value-item blockquote {
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #555;
+      margin: 0;
+      text-align: center;
+      border-left: 4px solid #4f46e5;
+      padding-left: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .scroll-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #ffffff;
+      color: #4f46e5;
+      border: none;
+      padding: 10px 15px;
+      font-size: 1.5rem;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 10;
+      transition: background-color 0.3s ease;
+      display: block;
+    }
+
+    .scroll-arrow:hover {
+      background-color: #ececec;
+    }
+
+    .right-arrow {
+      right: 10px;
+    }
+
+    .left-arrow {
+      left: 10px;
+    }
+
+    /* Background Colors */
+    .value-item:nth-child(1) {
+      background: #fed7c7;
+    }
+
+    .value-item:nth-child(2) {
+      background: #ece876;
+    }
+
+    .value-item:nth-child(3) {
+      background: #a0f4ad;
+    }
+
+    .value-item:nth-child(4) {
+      background: #baf0f1;
+    }
+
+    .value-item:nth-child(5) {
+      background: #b7bbef;
+    }
+
+    .value-item:nth-child(6) {
+      background: #d5a6f7;
+    }
+
+    .value-item:nth-child(7) {
+      background: #f1a6d2;
+    }
+
+    .value-item:nth-child(8) {
+      background: #a3edf2;
+    }
+
+    .value-item:nth-child(9) {
+      background: #fce7f3;
+    }
+
+    .value-item:nth-child(10) {
+      background: #f8f5c4;
+    }
+
+    /* Small screen tweaks */
+    @media (max-width: 400px) {
+      .value-item {
+        min-width: 290px;
+        max-width: 290px;
+        min-height: 290px;
+        max-height: 290px;
+      }
+    }
+    @media (max-width: 768px) {
+  .values-list {
+    flex-direction: row !important;
+  }
+  .scroll-arrow {
+    display: block !important;  /* show arrows on mobile too */
+
+  }
+  .value-item p {
+    font-size: small;
+  }
+}
+/* === ABOUT SECTION === */
+
+#about-wrapper {
+  overflow: hidden;
+  animation: rollDown 1.5s ease forwards;
+}
+
+/* Main about section with animated background and curved clip */
+#about {
+  background: linear-gradient(135deg, #052c96, #2e8bc0, #56cfe1);
+  background-size: 200% 200%;
+  animation: gradientFlow 10s ease infinite;
+  color: white;
+  padding: 4rem 2rem;
+  padding-bottom: 8rem;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+ clip-path: polygon(
+  0 0,
+  100% 0,
+  100% 92%,
+  90% 96%,
+  80% 92%,
+  70% 96%,
+  60% 92%,
+  50% 96%,
+  40% 92%,
+  30% 96%,
+  20% 92%,
+  10% 96%,
+  0 92%
+);
+}
+
+/* Reveal animation (height no longer hardcoded!) */
+@keyframes rollDown {
+  0% {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    max-height: 5000px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Background animation */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Make container always fit content and stay responsive */
+.about-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Responsive heading */
+.about-main h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive paragraph */
+.about-main p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #e3f2ff;
+  max-width: 900px;
+  margin: 0 auto 2rem auto;
+  padding: 0 1rem;
+  text-align: justify;
+  text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.2);
+  word-break: break-word;
+}
+
+/* Bullet list */
+.about-main ul {
+  list-style: none;
+  padding-left: 0;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.about-main ul li {
+  margin-bottom: 0.7rem;
+  font-size: 1.05rem;
+}
+
+.about-main ul li::before {
+  content: "✔️ ";
+  color: #4f46e5;
+  margin-right: 8px;
+}
+
+.about-main br{
+  padding-bottom: 10rem;
+}
+/* === RESPONSIVE BREAKPOINTS === */
+@media (max-width: 992px) {
+  .about-main h2 {
+    font-size: 2.2rem;
+  }
+
+  .about-main p,
+  .about-main ul li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-main h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-main p,
+  .about-main ul li {
+    font-size: 0.95rem;
+  }
+}
+
+@media (mix-width: 480px) {
+  .about-main h2 {
+    font-size: 1.6rem;
+  }
+
+  .about-main p,
+  .about-main ul li {
+    font-size: 0.9rem;
+  }
+
+  #about {
+    padding: 3rem 1rem;
+  }
+}
+
+
+  
+/* === BRANCH GRID CARDS === */
+    /* our journey */
+    #journey {
+    padding: 5rem 1rem;
+    margin: 0 auto;
+    color: #f0f8ff; /* Light blueish-white for contrast */
+    text-align: center;
+    background: linear-gradient(135deg, #2c3e50 0%, #4a69bd 50%, #6a89cc 100%);
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+  }
+
+
+    #journey h2 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    margin-bottom: 0.8rem;
+    color: #d1e0ff; /* Soft pastel blue for headings */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  }
+
+    #journey p {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    color: #e6f0ff; /* Slightly lighter text for paragraphs */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+
+    .timeline-container {
+      overflow-x: auto;
+      padding-bottom: 5rem;
+    }
+
+    .timeline {
+      display: flex;
+      align-items: center;
+      min-width: 800px;
+      position: relative;
+      justify-content: space-between;
+    }
+
+    .years {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      color: #0b2258;
+      font-weight: 600;
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      letter-spacing: 0.05em;
+      user-select: none;
+    }
+
+    .years span {
+      flex: 1;
+      text-align: center;
+      position: relative;
+      
+    }
+
+    .years span::after {
+      content: '';
+      display: block;
+      margin: 6px auto 0;
+      width: 10px;
+      height: 10px;
+      background-color: #052c96;
+      border-radius: 50%;
+    }
+    
+
+    .walker {
+      position: absolute;
+      top: 40px;
+      font-size: 3rem;
+      transition: left 0.1s ease-in-out;
+      user-select: none;
+    }
+
+    #walker-description {
+    margin: 1.5rem auto 0;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.15); /* translucent white background */
+    color: #f0f8ff; /* bright, easy-to-read text */
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-align: justify;
+    line-height: 1.5;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    user-select: text;
+  }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      #journey {
+        padding: 2rem 0.5rem;
+      }
+
+      .timeline {
+        min-width: 250px;
+      }
+
+      .walker {
+        font-size: 1.5rem;
+        top: 40px;
+      }
+      #walker-description{
+        margin-top: 1px;
+      }
+    }
+
+    /* our mission */
+
+    #mission {
+      background: url("images/walker.gif") center center / cover no-repeat;
+      color: var(--white);
+      text-align: center;
+      padding: 10rem 2rem 12rem; /* extra bottom padding for curve */
+      box-shadow: 0 4px 15px rgba(79, 70, 229, 0.5);
+      position: relative;
+      overflow: hidden;
+      clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 90%,
+        50% 100%,
+        0 90%
+      );
+      border-radius: 0 0 80px 80px;
+    } 
+
+    #mission::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 60%);
+      animation: rotateGlow 20s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes rotateGlow {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    #mission h2 {
+      font-size: 5.5rem;
+      margin-bottom: 1rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      z-index: 1;
+      position: relative;
+      color: #fce097;
+      /* soft warm white */
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    @keyframes fadeInUpGlow {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.35);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+    text-shadow: 1px 1px 8px rgba(79, 70, 229, 0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.35);
+  }
+}
+
+#mission p {
+  font-size: 2.2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  line-height: 1.8;
+  z-index: 1;
+  position: relative;
+  color: #fefae0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.35);
+  font-weight: bolder;
+  
+  /* Animation */
+  animation: fadeInUpGlow 3s ease forwards;
+  animation-delay: 0.5s; /* delay before animation starts */
+}
+
+    @media (max-width: 768px) {
+      #mission h2 {
+        font-size: 2rem;
+      }
+
+      #mission p {
+        font-size: 1rem;
+        padding: 0 1rem;
+      }
+    }
+
+    /* Staff Section Container */
+.staff-section {
+  padding: 30px 20px;
+  background-color: #0b2258;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.staff-heading {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  color: #ffffff;
+}
+
+/* Horizontal Scroll Container */
+.staff-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 56px;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+  padding-left: 40px ;
+}
+@media (max-width:768px){
+  .staff-container{
+    gap: 16px;
+    padding-left: 20px;
+  }
+}
+
+
+
+/* Optional scrollbar styling */
+.staff-container::-webkit-scrollbar {
+  height: 8px;
+}
+.staff-container::-webkit-scrollbar-thumb {
+  background-color: #4e54c8;
+  border-radius: 10px;
+}
+.staff-container::-webkit-scrollbar-track {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+/* Staff Card Design */
+.staff-card {
+  flex: 0 0 auto;
+  width: 180px;
+  background-color: #ffffff;
+  color: #0b2258;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.staff-card:hover {
+  transform: scale(1.05);
+}
+
+/* Image Styling */
+.staff-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 12px;
+  border: 3px solid #4e54c8;
+}
+
+/* Colored Dot */
+.staff-icon {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 auto 8px;
+}
+.staff-icon.blue { background-color: #2196f3; }
+.staff-icon.green { background-color: #4caf50; }
+.staff-icon.orange { background-color: #ff9800; }
+.staff-icon.red { background-color: #f44336; }
+.staff-icon.yellow { background-color: #ffeb3b; }
+
+/* Titles */
+.staff-title {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.staff-card h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+
+    
+
+
+
+    @media (max-width: 600px) {
+
+      .values-list {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbar-container">Loading navigation...</div>
+
+  <header class="hero">
+    <video autoplay muted loop playsinline class="hero-video">
+    <source src="images/back.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+    </video>
+    
+    <h1>SOURCBOX SOLUTION</h1>
+    <p>Innovating solutions for a smarter future.
+      Where creativity meets cutting-edge tech.</p>
+  </header>
+
+  <main class="container">
+
+    
+<section id="about">
+  <div class="about-container" data-aos="fade-up">
+    <div class="about-main">
+      <h2 data-aos="zoom-in" data-aos-delay="100">About Us</h2>
+      <p data-aos="fade-up" data-aos-delay="300">
+        At <strong>SOURCBOX SOLUTION</strong>, our head office stands as the vibrant heart of innovation, collaboration, and technological excellence. Designed with a focus on openness, inspiration, and productivity, our workplace is more than just an office—it’s a hub where creativity flourishes, teams collaborate seamlessly, and groundbreaking ideas are brought to life...
+
+        <br><br><strong>Our Ventures:</strong><br>
+        <ul data-aos="fade-left" data-aos-delay="400">
+          <li><strong>RESOURC-IT</strong>: A powerful platform for resource optimization, project management, and enterprise efficiency.</li>
+          <li><strong>SWEEKAAR Matrimony</strong>: A culturally-rooted matrimonial platform fostering meaningful connections.</li>
+          <li><strong>BRILL MOMENTZ</strong>: A celebration-centric venture for cherishing life’s special moments.</li>
+          <li><strong>FIN-GROW</strong>: A financial wellness platform for tools, planning, and investment insights.</li>
+        </ul>
+
+        <br><strong>Our ITES Services:</strong><br>
+        <ul data-aos="fade-right" data-aos-delay="500">
+          <li><strong>AI & Machine Learning</strong>: Automating and optimizing with intelligent systems.</li>
+          <li><strong>Database Management</strong>: Secure, scalable, and efficient data architecture.</li>
+          <li><strong>Web Development</strong>: Fast, responsive, and modern websites.</li>
+          <li><strong>Android/iOS Development</strong>: Robust mobile apps tailored to user needs.</li>
+          <li> <strong>App Debugging & Testing</strong>: Thorough QA for optimal app performance.</li>
+        </ul>
+
+        <br>At SOURCBOX, we don’t just build products—we build <strong>experiences, ecosystems, and futures.</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+
+    <section id="journey">
+      <h2>Our Journey</h2>
+      <p>From 2016, we've been walking the path of innovation, growth, and success.</p>
+
+      <div class="timeline-container">
+        <div class="timeline">
+          <div class="years">
+            <span>2016</span>
+            <span>2018</span>
+            <span>2021</span>
+            <span>2022</span>
+            <span>2023</span>
+            <span>2024</span>
+            <span>2025+</span>
+          </div>
+          <div class="walker" id="walker" aria-label="Walking person" role="img">🚶‍♂️‍➡️</div>
+        </div>
+      </div>
+
+      <div id="walker-description" aria-live="polite"></div>
+    </section>
+
+    <section id="mission">
+      <h2>Our Mission</h2>
+      <p>At Sourcbox Solution, our mission is to empower businesses worldwide with innovative, reliable, and scalable
+        technology solutions tailored to their unique needs.</p>
+    </section>
+
+    <section id="values">
+    <h2>Our Values</h2>
+
+    <div class="values-scroll-wrapper">
+      <button class="scroll-arrow left-arrow" onclick="scrollValues(-1)">&#8592;</button>
+
+      <div class="values-list" id="scrollList">
+  <div class="value-item">
+    <img src="images/integrity.jpg" alt="Integrity" />
+    <h3>Integrity</h3>
+    <p>We uphold honesty and strong moral principles in every decision and action.</p>
+    <blockquote>"Integrity builds trust, and trust builds lasting relationships."</blockquote>
+  </div>
+
+  <div class="value-item">
+    <img src="images/Innovation.jpg" alt="Innovation" />
+    <h3>Innovation</h3>
+    <p>We constantly seek creative solutions to improve and lead in our field.</p>
+    <blockquote>"Innovation drives progress and shapes the future."</blockquote>
+  </div>
+
+  <div class="value-item">
+    <img src="images/Excellence.jpg" alt="Excellence" />
+    <h3>Excellence</h3>
+    <p>We are committed to delivering the highest quality and exceeding expectations.</p>
+    <blockquote>"Excellence is not an act, but a habit."</blockquote>
+  </div>
+
+  <div class="value-item">
+    <img src="images/Teamwork.jpg" alt="Teamwork" />
+    <h3>Teamwork</h3>
+    <p>We foster a culture of cooperation and respect to achieve common goals.</p>
+    <blockquote>"Together, we can accomplish more than alone."</blockquote>
+  </div>
+
+  <div class="value-item">
+    <img src="images/Respect.jpg" alt="Respect" />
+    <h3>Respect</h3>
+    <p>We honor diverse perspectives and treat everyone with fairness and dignity.</p>
+    <blockquote>"Respect is the foundation of a positive workplace."</blockquote>
+  </div>
+</div>
+
+      <button class="scroll-arrow right-arrow" onclick="scrollValues(1)">&#8594;</button>
+    </div>
+  </section>
+
+
+  <section class="staff-section">
+  <h2 class="staff-heading">Our Team</h2>
+  <p style="color:#4c82af;">
+      Meet the passionate minds and dedicated professionals driving our vision forward — blending innovation, expertise, and heart to build something extraordinary together.
+    </p>
+  <div class="staff-container">
+    <div class="staff-card">
+      <img src="images/image.jpg" alt="Team Member 1" />
+      <div class="staff-icon blue"></div>
+      <p class="staff-title">Chief Operation Manager</p>
+      <h3>B.Millan Kumar</h3>
+      
+    </div>
+    <div class="staff-card">
+      <img src="images/image12.jpg" alt="Team Member 2" />
+      <div class="staff-icon green"></div>
+      <p class="staff-title">Manager</p>
+      <h3>Raj Kishor Lenka</h3>
+    </div>
+    <div class="staff-card">
+      <img src="images/lok.JPG" alt="Team Member 3" />
+      <div class="staff-icon orange"></div>
+      <p class="staff-title">Sr. Program Coordinator</p>
+      <h3>Lokanath Jena</h3>
+    </div>
+    <div class="staff-card">
+      <img src="images/image10.jpg" alt="Team Member 4" />
+      <div class="staff-icon red"></div>
+      <p class="staff-title">Sr. Operation Analyst</p>
+      <h3>Monali Nayak</h3>
+    </div>
+    <div class="staff-card">
+      <img src="images/image11.jpg" alt="Team Member 5" />
+      <div class="staff-icon yellow"></div>
+      <p class="staff-title">Project & Client Relationship Manager</p>
+      <h3>Mousumi Nayak</h3>
+    </div>
+  </div>
+</section>
+
+ 
+    
+  </main>
+  <div id="footer-container">Loading footer...</div>
+
+
+</body>
+
+
+<script>
+  function applyNow() {
+    window.location.href = "career.html"; // adjust path if needed
+  }
+
+  // Load navbar
+  fetch('navbar.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('navbar-container').innerHTML = data)
+    .catch(() => {
+      document.getElementById('navbar-container').innerHTML = '<p style="text-align:center; background:#2f7d32; color:#fff; padding:10px;">Navbar failed to load</p>';
+    });
+
+  // Load footer
+  fetch('Footer.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('footer-container').innerHTML = data)
+    .catch(() => {
+      document.getElementById('footer-container').innerHTML = '<footer>Footer failed to load</footer>';
+    });
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.value-item');
+    cards.forEach((card, index) => {
+      setTimeout(() => {
+        card.classList.add('visible');
+      }, index * 400); // stagger by 400ms per card
+    });
+  });
+
+
+  // our journey
+  const walker = document.getElementById('walker');
+  const descriptionDiv = document.getElementById('walker-description');
+  const years = document.querySelectorAll('.years span');
+
+  const descriptions = [
+    "2016: In 2016, we embarked on our journey by founding 3Q Consulting Services, dedicated to resource management and job placement solutions that connect skilled talent with the right opportunities. Alongside this, we launched 3Q Events, stepping into the world of event management with a focus on creativity, precision, and impactful experiences. These two ventures showcased our diverse capabilities and commitment to excellence, laying a strong foundation for the growth and innovation that would define our path ahead.",
+    "2018: In 2018, we took a significant leap forward by initiating our first AI project in collaboration with APPEN. This marked our entry into the world of artificial intelligence and data annotation, expanding our expertise beyond traditional services. Partnering with a global leader like APPEN empowered us to contribute to cutting-edge AI solutions and set the stage for our continued growth in the tech space.",
+    "2021: In 2021, we rebranded and restructured our organization as SOURCBOX SOLUTION, marking a strategic shift towards specialization. This transformation reflected our focus on delivering top-tier services exclusively in the Information Technology Enabled Services (ITES) sector. By refining our vision and aligning with industry demands, we positioned SOURCBOX SOLUTION as a reliable partner for innovative, efficient, and scalable ITES solutions.",
+    "2022: In 2022, SOURCBOX SOLUTION expanded its presence by opening a new office in Sivasagar, Assam, aimed at strengthening our support for the northern and northeastern regional languages. This strategic move allowed us to tap into local linguistic expertise, enhance regional inclusivity, and deliver more culturally nuanced solutions. It also marked a significant step in our mission to embrace diversity and expand our reach across India.",
+    "2023: In 2023, SOURCBOX SOLUTION began collaborating with ITMATCH to enhance resource and IT management services. This partnership aimed to streamline operations, improve efficiency, and deliver innovative solutions to clients. By joining forces, both companies strengthened their capabilities to meet the growing demands of the IT sector and provide better support for resource management.",
+    "2024: In 2024, SOURCBOX SOLUTION, in collaboration with BHAIVAB TRADING, ventured into smart classrooms by integrating AI technologies to assist children with tech support and learning. This innovative step aimed to enhance educational experiences, making technology more accessible and interactive for students. The initiative reflects their shared commitment to leveraging AI to support the next generation’s learning journey.",
+    "2025+: In 2025, we focus on a bright, sustainable future by embracing innovation and strong partnerships. We aim to expand globally while upholding our values of quality and responsibility. Our goal is to create lasting value for clients and communities. Together, we strive to shape a future where technology and people thrive."
+  ];
+
+  const stepInterval = 2000; // 2 seconds per stop
+
+  let currentIndex = 0;
+
+  function moveWalker() {
+    if (currentIndex >= years.length) {
+      currentIndex = 0; // loop back to start
+    }
+
+    // Get the center X of the target year span
+    const target = years[currentIndex];
+    const container = document.querySelector('.timeline');
+    const walkerWidth = walker.offsetWidth;
+
+    const leftOffset = target.offsetLeft + target.offsetWidth / 2 - walkerWidth / 2;
+
+    // Move the walker
+    walker.style.left = `${leftOffset}px`;
+
+    // Show corresponding description
+    descriptionDiv.textContent = descriptions[currentIndex];
+
+    currentIndex++;
+  }
+
+  // Start the animation
+  moveWalker(); // Initial call
+  setInterval(moveWalker, stepInterval);
+
+
+  // values scroll
+
+  function scrollValues(direction) {
+      const container = document.getElementById('scrollList');
+      const scrollAmount = 300; // pixels to scroll on each arrow click
+      container.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth',
+      });
+    }
+</script>
+</body>
+
+</html>
+
+</html>

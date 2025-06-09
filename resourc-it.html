@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RESOURC-IT | Human Resources</title>
+  <style>
+    :root {
+  --primary: #0d1b2a;
+  --secondary: #1b263b;
+  --accent: #00b4d8;
+  --bg: #f4f4f9;
+  --text: #1e1e1e;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Header with Glassmorphism Effect */
+/* Base header design */
+header {
+  position: relative;
+  height: 90vh;
+  background: linear-gradient(135deg, #9de5f4, #207aab);
+  overflow: hidden;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: -1;
+}
+
+/* Background animation layer */
+.header-background {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Floating shapes */
+.floating-shape {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  animation: float 12s infinite ease-in-out;
+}
+
+.shape1 {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.shape2 {
+  bottom: 10%;
+  right: 15%;
+  animation-delay: 4s;
+}
+
+/* Floating animation */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+  100% { transform: translateY(0); }
+}
+
+/* Content Layer */
+.header-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 20px;
+}
+
+/* Main title */
+header h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  animation: fadeDown 1s ease-out forwards;
+  opacity: 0;
+
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: #ccefff;
+  animation: fadeDown 1.4s ease-out forwards;
+  opacity: 0;
+}
+
+/* Welcome glass card */
+.welcome-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  padding: 30px;
+  margin: 0 auto;
+  color: #ffffff;
+  animation: fadeUp 1.8s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.welcome-card h2 {
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 8px;
+}
+
+.welcome-card p {
+  font-size: 1.1rem;
+  color: #e6faff;
+}
+
+/* Arrow to scroll */
+.scroll-down {
+  display: inline-block;
+  margin-top: 30px;
+  font-size: 2rem;
+  color: #ffffff;
+  animation: bounce 2s infinite;
+  text-decoration: none;
+}
+
+/* Animations */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .welcome-card {
+    padding: 20px;
+  }
+}
+
+
+/* Navigation Bar */
+.one-line {
+  background: var(--secondary);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.one-line a {
+  color: var(--white);
+  padding: 12px 20px;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.one-line a::after {
+  content: "";
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.one-line a:hover::after {
+  width: 60%;
+}
+
+
+/* about */
+
+#about {
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+  padding: 4rem 2rem;
+  margin: 4rem auto;
+  max-width: 1000px;
+  border-radius: 2rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  animation: fadeInUp 1s ease forwards;
+}
+
+#about h2 {
+  font-size: 3rem;
+  color: #0077b6;
+  text-align: center;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+#about h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #00b4d8;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+#about p {
+  font-size: 1.15rem;
+  color: #333;
+  line-height: 2;
+  text-align: justify;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem 1rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-left: 4px solid #00b4d8;
+  border-radius: 0.5rem;
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optional Responsive Styling */
+@media (max-width: 768px) {
+  #about {
+    padding: 2rem 1rem;
+  }
+
+  #about h2 {
+    font-size: 2.2rem;
+  }
+
+  #about p {
+    font-size: 1rem;
+  }
+}
+
+/* placements */
+
+#placements {
+  text-align: center;
+  padding: 6rem 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+  background-size: 600% 600%;
+  animation: animatedGradient 12s ease infinite;
+}
+
+@keyframes animatedGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 100%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+#placements h2 {
+  font-size: 3rem;
+  color: #002b5b;
+  margin-bottom: 4rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+.circle-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+
+.circular-chart {
+  width: 220px;
+  height: 220px;
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  filter: drop-shadow(0 0 8px rgba(0,0,0,0.1));
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #ddd;
+  stroke-width: 3.8;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 3.8;
+  stroke-linecap: round;
+  stroke: url(#blueGradient);
+  stroke-dasharray: 0, 100;
+  animation: progress 10s ease-out forwards;
+}
+
+.circular-chart.green .circle {
+  stroke: url(#greenGradient);
+}
+
+.percentage {
+  fill: #1a1a1a;
+  font-size: 0.6rem;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  font-weight: bold;
+  animation: fadeIn 10s ease-out;
+}
+
+.circle-stat p {
+  margin-top: 1.2rem;
+  font-weight: 600;
+  color: #16063b;
+  font-size: 2.2rem;
+}
+
+.circle-stat:hover .circular-chart {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 15px rgba(0, 136, 255, 0.3));
+}
+
+@keyframes progress {
+  to {
+    stroke-dasharray: var(--progress, 80) 100;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .circular-chart {
+    width: 160px;
+    height: 160px;
+  }
+
+  .percentage {
+    font-size: 0.5rem;
+  }
+
+  .circle-stat p {
+    font-size: 1rem;
+  }
+
+  #placements h2 {
+    font-size: 2.2rem;
+  }
+}
+
+
+/* client testimonials */
+
+#clients {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  text-align: center;
+  overflow: hidden;
+}
+
+#clients h2 {
+  font-size: 2.7rem;
+  color: #222;
+  margin-bottom: 60px;
+  font-weight: 700;
+  position: relative;
+  animation: fadeInDown 1s ease forwards;
+}
+
+.testimonials-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.testimonial {
+  width: 320px;
+  padding: 30px;
+  background: linear-gradient(145deg, #e0f7fa, #ffffff);
+  border-radius: 25px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transform: scale(0.95);
+  opacity: 0;
+  animation: slideUp 1.2s forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.testimonial:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.testimonial:hover {
+  transform: scale(1.02);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial p {
+  color: #333;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(60px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .testimonials-wrapper {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 20px;
+  }
+
+  .testimonial {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    margin-right: 20px;
+  }
+
+  #clients h2 {
+    font-size: 2rem;
+  }
+}
+
+/* candidate testimonials */
+#candidates {
+  padding: 100px 20px;
+  background: linear-gradient(120deg, #fdfbfb, #e6f0ff);
+  text-align: center;
+}
+
+#candidates h2 {
+  font-size: 2.7rem;
+  color: #1a237e;
+  margin-bottom: 50px;
+  font-weight: 800;
+  animation: popIn 1s ease-in-out;
+}
+
+.candidate-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.candidate-card {
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 140px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.candidate-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-front {
+  background: #ffffff;
+  font-size: 1rem;
+  color: #333;
+  font-style: italic;
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  background: #4a148c;
+  color: #fff;
+  font-weight: bold;
+  transform: rotateY(180deg);
+}
+
+/* Animation */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  #candidates h2 {
+    font-size: 2rem;
+  }
+
+  .card-inner {
+    height: 180px;
+  }
+}
+
+#contact {
+  max-width: 480px;
+  margin: 10px auto;
+  padding: 30px 25px;
+  background: #f0f8ff;
+  border-radius: 15px;
+  box-shadow: 0 12px 24px rgba(0, 123, 255, 0.15);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  color: #222;
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #0056b3;
+}
+
+.contact-info {
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.contact-info p {
+  margin: 10px 0;
+}
+
+.contact-info strong {
+  color: #007bff;
+}
+
+.quote {
+  font-style: italic;
+  color: #444;
+  font-size: 1.15rem;
+  margin-top: 15px;
+  border-left: 5px solid #007bff;
+  padding-left: 20px;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  user-select: none;
+}
+
+@media (max-width: 600px) {
+  #contact {
+    margin: 40px 15px;
+    padding: 25px 20px;
+  }
+
+  #contact h2 {
+    font-size: 2rem;
+  }
+
+  .quote {
+    max-width: 100%;
+    padding-left: 15px;
+    border-left-width: 4px;
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+
+    <div id="navbar-container">Loading navigation...</div>
+
+  <header>
+  <div class="header-background">
+    <div class="floating-shape shape1"></div>
+    <div class="floating-shape shape2"></div>
+  </div>
+  <div class="header-content">
+    <h1>RESOURC-IT</h1>
+    <p class="subtitle">Empowering Human Resources</p>
+    <div class="welcome-card" id="welcome">
+      <h2>Welcome to RESOURC-IT</h2>
+      <p>We connect talented candidates with top employers, streamlining the hiring process and delivering human resource excellence.</p>
+    </div>
+    <a href="#about" class="scroll-down">&#x25BC;</a>
+  </div>
+</header>
+
+
+  <div class="one-line">
+    <a href="#about">About Us</a>
+    <a href="#placements">Placements</a>
+    <a href="#clients">Client Testimonials</a>
+    <a href="#candidates">Candidate Testimonials</a>
+    <a href="#contact">Contact HR</a>
+  </div>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>SOURCBOX SOLUTION is an organization specialized as an Information Technology Enabled Services-ITES firm in Artificial Intelligence-AI domain working on Linguistic Transcription (Hindi, Odia & Assamese)
+    and as well as into Event Management, Financial Support Services, Hiring Solutions, Structural Planning, Advertising and Matrimonial Services domain. Our Team is a group of experienced professionals from
+    reputed organizations engaged in providing specialized consultation to various industries and individuals. We work with a mission of “Manifold Solutions Delivered” believing our clients to get diversified solutions at a single point, and we assure you of a high level of integrity and speed in the assignments we undertake. SOURCBOX has a strong database of professionals ranging from CEOs to skilled Technical Personnel’s covering the entire functional spectrum of any organization.  SOURCBOX have a firm belief in spirited team efforts within a committed system to provide services of the optimum class to its esteemed clientele. We have a validate panel of Managers, Supervisors and Skilled Technical Personnel from diverse streams ranging from General Management, Maintenance, Materials, Sales & Marketing, HRD, IT/ITES, Systems Finance, Process, Quality & Project, Hospitality, Housekeeping and etc.  Our Focus Industries are IT/ITES, Power, Pharmaceuticals, Financial Services, Logistics, FMCG, Automobile, Banking Services, Hotel & Tourism, Media, Garment & many more sectors.</p>
+  </section>
+
+
+  <!-- placements -->
+  <section id="placements">
+  <h2>Placements</h2>
+  <div class="circle-container">
+
+    <!-- Hirings: 80% -->
+    <div class="circle-stat">
+      <svg viewBox="0 0 36 36" class="circular-chart blue">
+        <defs>
+          <linearGradient id="blueGradient" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#36d1dc"/>
+            <stop offset="100%" stop-color="#5b86e5"/>
+          </linearGradient>
+        </defs>
+        <path class="circle-bg"
+              d="M18 2.0845
+                 a 15.9155 15.9155 0 0 1 0 31.831
+                 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+        <path class="circle"
+              stroke-dasharray="80, 100"
+              d="M18 2.0845
+                 a 15.9155 15.9155 0 0 1 0 31.831
+                 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+        <text x="18" y="20.5" class="percentage" id="hiringsCount">0%</text>
+      </svg>
+      <p>Hirings</p>
+    </div>
+
+    <!-- Clients: 100 -->
+    <div class="circle-stat">
+      <svg viewBox="0 0 36 36" class="circular-chart green">
+        <defs>
+          <linearGradient id="greenGradient" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#43e97b"/>
+            <stop offset="100%" stop-color="#38f9d7"/>
+          </linearGradient>
+        </defs>
+        <path class="circle-bg"
+              d="M18 2.0845
+                 a 15.9155 15.9155 0 0 1 0 31.831
+                 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+        <path class="circle"
+              stroke-dasharray="100, 100"
+              d="M18 2.0845
+                 a 15.9155 15.9155 0 0 1 0 31.831
+                 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+        <text x="18" y="20.5" class="percentage" id="clientsCount">0</text>
+      </svg>
+      <p>Clients</p>
+    </div>
+
+  </div>
+</section>
+
+  <section id="clients">
+  <h2>Client Testimonials</h2>
+  <div class="testimonials-wrapper">
+    <div class="testimonial">
+      <p>"RESOURC-IT consistently delivers high-quality candidates who fit perfectly into our teams."<br>– HR Manager, TechWave Inc.</p>
+    </div>
+    <div class="testimonial">
+      <p>"Professional, reliable, and efficient – our hiring process is faster thanks to RESOURC-IT."<br>– Talent Lead, FinCore</p>
+    </div>
+    <div class="testimonial">
+      <p>"Their team is incredibly responsive and truly understands our business needs."<br>– Operations Head, NexaSoft Solutions</p>
+    </div>
+    <div class="testimonial">
+      <p>"The attention to detail and personalized approach set RESOURC-IT apart."<br>– Director, GrowBiz Pvt. Ltd.</p>
+    </div>
+    <div class="testimonial">
+      <p>"Reliable and innovative — they’ve streamlined our hiring pipeline remarkably."<br>– Recruitment Manager, BrightTech</p>
+    </div>
+    <div class="testimonial">
+      <p>"Great experience working with RESOURC-IT. A truly professional and talented team!"<br>– CEO, DigitNest</p>
+    </div>
+  </div>
+</section>
+
+
+  <section id="candidates">
+  <h2>Candidate Testimonials</h2>
+  <div class="candidate-grid">
+    <div class="candidate-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <p>"Thanks to RESOURC-IT, I landed a role that aligns with my career goals."</p>
+        </div>
+        <div class="card-back">
+          <h4>– Priya S.</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="candidate-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <p>"Their guidance and support made my job hunt stress-free."</p>
+        </div>
+        <div class="card-back">
+          <h4>– Amit R.</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="candidate-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <p>"I got placed in a reputed MNC within weeks."</p>
+        </div>
+        <div class="card-back">
+          <h4>– Rahul D.</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="candidate-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <p>"The RESOURC-IT team was with me every step of the way."</p>
+        </div>
+        <div class="card-back">
+          <h4>– Arjun N.</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <section id="contact">
+  <h2>Contact HR</h2>
+
+  <div class="contact-info">
+    <p><strong>Email:</strong> hr@sourcboxsolution.com</p>
+    <p><strong>Phone:</strong> +91-7606986077</p>
+
+  </div>
+
+  <blockquote class="quote">
+    “Connecting talent with opportunity – your success is our mission.”
+  </blockquote>
+
+
+  <footer>
+    <p>&copy; 2025 RESOURC-IT. All rights reserved.</p>
+  </footer>
+
+  <script>
+
+    fetch('navbar.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('navbar-container').innerHTML = data)
+    .catch(() => {
+      document.getElementById('navbar-container').innerHTML = '<p style="text-align:center; background:#2f7d32; color:#fff; padding:10px;">Navbar failed to load</p>';
+    });
+    
+    function submitForm(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      alert('Thank you, ' + name + '! Your message has been sent to HR.');
+      document.getElementById('name').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('message').value = '';
+    }
+
+    // Trigger animations when sections come into view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationDelay = '0.2s';
+          entry.target.style.animationPlayState = 'running';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section').forEach(section => {
+      section.style.animationPlayState = 'paused';
+      observer.observe(section);
+    });
+
+    // placements
+
+    function animateCount(id, endValue, isPercent = false, duration = 2000) {
+    const el = document.getElementById(id);
+    let startTime = null;
+
+    function update(currentTime) {
+      if (!startTime) startTime = currentTime;
+      const progress = currentTime - startTime;
+      const current = Math.min(Math.round((progress / duration) * endValue), endValue);
+      el.textContent = isPercent ? `${current}%` : current;
+
+      if (current < endValue) requestAnimationFrame(update);
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    animateCount('hiringsCount', 80, true);
+    animateCount('clientsCount', 100, false);
+  });
+  </script>
+</body>
+</html>
